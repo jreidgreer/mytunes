@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <body>
-  <h1>Bumpin Songs</h1>
+  <div id="tunesApp">
+      <h1>Bumpin Songs</h1>
+  </div>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
     <link rel="stylesheet" type="text/css" href="styles.css" />
@@ -33,7 +35,7 @@
         var appView = new AppView({model: app});
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        $('#tunesApp').append(appView.render());
       });
     </script>
   </body>

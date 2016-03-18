@@ -18,5 +18,4 @@ var LibraryView = Backbone.View.extend({
       })
     );
   }
-
 });

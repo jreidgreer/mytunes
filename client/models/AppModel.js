@@ -17,12 +17,12 @@ var AppModel = Backbone.Model.extend({
     }, this);
 
     params.library.on('enqueue', function(song) {
-      this.get('songQueue').add(song);
+      console.log('WORK... OR ELSE....');
+      this.get('songQueue').enqueue(song);
     }, this);
 
-    params.library.on('dequeue', function(song) {
-      console.log('AppModel: Dequeue Event Detected. Triggering songQueue.playNext()');
-      this.get('songQueue').playNext();
+    this.get('songQueue').on('stop', function(song) {
+      this.set('currentSong', null);
     }, this);
   }
 
