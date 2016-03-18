@@ -3,12 +3,12 @@ var SongModel = Backbone.Model.extend({
 
   play: function() {
     // Triggering an event here will also trigger the event on the collection
-    console.log('it\'s playingggggggg!');
+    this.attributes.plays++;
     this.trigger('play', this);
+    console.log(this.attributes.plays);
   },
 
   enqueue: function() {
-    console.log('ARE YOU THERE?');
     this.trigger('enqueue', this);
   },
 
@@ -21,5 +21,4 @@ var SongModel = Backbone.Model.extend({
     // this.dequeue();
     this.trigger('ended', this);
   }
-
 });

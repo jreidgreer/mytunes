@@ -6,20 +6,14 @@ var SongQueue = Songs.extend({
     this.on('dequeue', this.dequeue, this);
     this.on('ended', this.playNext, this);
     this.on('add', function(e) {
-      console.log('TEST1');
-      if (this.models.length === 1) {      
-        console.log('TEST2');
+      if (this.models.length === 1) {
         this.playFirst();
       }  
     }, this);
   },
 
   enqueue: function(song) {
-    console.log('TEST3 - PLEASE WORK!');
     this.add(song);
-    // if (this.models.length === 1) {      
-    //   this.playFirst();
-    // }
   },
 
   dequeue: function(song) {
@@ -31,7 +25,6 @@ var SongQueue = Songs.extend({
   },
 
   playFirst: function() {
-    console.log('playFirst is triggered');
     this.at(0).play();
   },
 
